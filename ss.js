@@ -592,7 +592,9 @@ define(['N/ui/serverWidget', 'N/runtime', 'N/log', 'N/http', "N/record", "N/sear
         function isNullOrEmpty(valueStr) {
             return (valueStr == null || valueStr == "" || valueStr == undefined);
         }
+ 
 
+        
 
         // added by ali 3-2-2019 start
         function getQraExistingIds(trackingIds) {
@@ -640,7 +642,9 @@ define(['N/ui/serverWidget', 'N/runtime', 'N/log', 'N/http', "N/record", "N/sear
         }
         // aded by ali 3-4-2019 end
 
+    
 
+        
         return {
             execute: onRequest        
 
