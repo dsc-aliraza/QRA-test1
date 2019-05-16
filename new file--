@@ -1,0 +1,22 @@
+  } else if(CTstatus==13 && CTConNote!=null && ssn=='T' && asn=='F' && programId!=1343 && programId!=1322 && programId!=1326 && programId!=1327 && programId!=78 && programId!=1364){
+		nlapiLogExecution('DEBUG', 'sendSSNASNAutomate()3', 'asn=f');
+    var urlASN = nlapiResolveURL('SUITELET', 'customscript_send_notifications', 'customdeploy1',true);
+	urlASN += '&case=' + nlapiGetFieldValue('custrecord_ct_case');
+	urlASN += '&ct=' + nlapiGetRecordId();
+	urlASN += '&p=' + nlapiGetFieldValue('custrecord_ct_program');
+	//urlASN += '&p=' + 1354;
+	var  newURLASN =  urlASN + '&action=asn';
+	nlapiLogExecution('DEBUG', 'sendSSNASNAutomate()-newURL-ASN', newURLASN);
+	var responseX = nlapiRequestURL(newURLASN, null, null, null);	
+	nlapiLogExecution('DEBUG', 'sendSSNASNAutomate()-responce-ASN', responseX.getCode());
+	if (responseX.getCode() == 200) {
+		return true;
+	} else {
+		nlapiLogExecution('DEBUG', 'sendSSNASNAutomate()-response', responseX.getCode());
+		return false;
+	}
+    
+  } else {    }
+
+
+}
